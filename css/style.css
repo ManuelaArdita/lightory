@@ -1,0 +1,451 @@
+/* ==========================================================================
+   lightory — stylesheet
+   ========================================================================== */
+
+:root {
+  --cream-bg:     #FFFDF5;
+  --cream-panel:  #F7F2C4;
+  --cream-button: #FFFBA1;
+  --navy-top:     #0b1641;
+  --navy-bottom:  #555c97;
+  --ink:          #1E1E1E;
+  --ink-soft:     #3A3A3A;
+  --green-dark:   #1F3B2C;
+
+  --font-display: 'IMB Plex Serif'; /* font per i titoli */
+  --font-body:    'IBM Plex Sans KR'; /* font per i corpi di testo */
+
+  --max-width: 1440px;
+  --gap: 45px;
+  --radius: 8px;
+} /* memorizza variabili per gestire più facilmente il css */
+
+* { /*blocco di codice che azzera i margini e i padding predefiniti di tutti gli elementi e imposta il calcolo delle dimensioni (box-sizing) in modo che i bordi e lo spazio interno siano inclusi nella larghezza totale*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { /*rende graduale e fluido lo scorrimento della pagina al click su link di ancoraggio interno*/
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--cream-bg);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section, header, footer {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cream-panel);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  font-family: 'IBM Plex Serif';
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.main-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.main-nav a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: opacity 0.2s ease; /* specifica proprietà, tempo e metodo della transizione */
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible { /* applica gli stili di focus (come il bordo o l'alone di selezione) solo quando il browser ritiene che sia necessario mostrarli, ad esempio quando l'utente naviga usando la tastiera (tramite il tasto Tab) anziché il mouse o il touchscreen */
+  opacity: 0.6;
+} /* determina la "fine" della transizione: l'opacità da 1 scenderà a 0.6 */
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  margin: 75px 64px 0;
+  border-radius: 10px;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy-top) 20%, var(--navy-bottom) 80%);
+  padding: 60px 24px;
+}
+
+.hero-content h1 {
+  font-family: 'IBM Plex Serif';
+  font-size: 4.2rem;
+  font-weight: 500;
+  font-style: normal;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-family: var(--font-body);
+  font-size: 1.7rem;
+  color: #E7E4F2;
+  font-weight: 100;
+  letter-spacing: 0.06rem;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block; /* dà lo spazio in linea di un testo, ma permettendo di impostare larghezza, altezza e margini come un blocco */
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  background-color: var(--cream-button);
+  color: var(--ink);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: #EFE9A8;
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  padding: 4px 17px;
+  background-color: var(--green-dark);
+  color: #FFFFFF;
+}
+
+.btn-dark:hover,
+.btn-dark:focus-visible {
+  background-color: #16291F;
+}
+
+.featured {
+  margin-top: 100px;
+  padding-bottom: 16px;
+}
+
+.featured h2 {
+  font-family: var(--font-body);
+  font-weight: 100;
+  font-size: 2.1rem;
+  letter-spacing: 2.6px;
+  margin-bottom: 28px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.card {
+  background-color: var(--cream-panel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 320px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  background-color: #EFE9A8;
+  transform: translateY(-1px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1.2 / 1;
+  object-fit: cover;
+  background-color: #ddd; /* colore momentaneo mentre le immagini caricano */
+  object-position: 50% 20%;
+}
+
+.card-caption {
+  padding: 14px 16px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+}
+
+.show-all-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 32px;
+  bottom: 100px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--cream-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background-color: #EFE9A8;
+  transform: translateY(-2px);
+}
+
+.camera-detail {
+  margin: 130px 50px 150px 50px;
+  display: grid;
+  grid-template-columns: 580px 680px;
+  gap: 100px;
+  justify-content: center;
+}
+
+.camera-media img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.camera-info h1 {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.year-tag {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.camera-info p {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.camera-info p:last-child {
+  margin-bottom: 0;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.gallery {
+  padding-top: 72px;
+  padding-bottom: 16px;
+}
+
+.gallery h2 {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1.2 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.inventor-section {
+  margin: 200px 150px 100px 150px;
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+}
+
+.inventor-info h2 {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.inventor-info p {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+.inventor-photo img {
+  max-width: 250px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.site-footer {
+  margin-top: 40px;
+  background-color: var(--cream-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.footer-credits {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.footer-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE — TABLET
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  section, header, footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero {
+    margin: 32px 40px 0;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  section, header, footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .main-nav {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    margin: 24px 20px 0;
+    min-height: 280px;
+    padding: 40px 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    padding-top: 40px;
+  }
+
+  .show-all-wrap {
+    justify-content: center;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--navy-top);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
