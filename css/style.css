@@ -198,6 +198,14 @@ section, header, footer {
   text-align: center;
 }
 
+#f2 {
+  margin-bottom: 150px;
+}
+
+#i2 {
+  margin-bottom: 150px;
+}
+
 .show-all-wrap {
   display: flex;
   justify-content: flex-end;
