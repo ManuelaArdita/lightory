@@ -335,6 +335,78 @@ section, header, footer {
   border-radius: var(--radius);
 }
 
+.timeline {
+  padding-top: 56px;
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+.timeline_item {
+  position: relative;
+  padding: 24px 0;
+}
+
+.timeline_txt {
+  position: relative;
+  max-width: 460px;
+}
+
+.timeline_txt h2 {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.timeline_txt p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.timeline_mediad {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: end;
+}
+
+.destra {
+  z-index: 2;
+  width: 700px;
+}
+
+.polygon {
+  z-index: 1;
+  width: 700px;
+  left: 750px;
+  top: 80px;
+}
+
+.timeline_item:not(.reverse) .polygonl {
+  right: 0;
+  bottom: 0;
+}
+
+.timeline-item.reverse .polygonl {
+  left: 0;
+  bottom: 0;
+  transform: scaleX(-1); /* specchia il poligono per l'orientamento opposto */
+}
+
+.timeline_connector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline_connector img {
+  width: 24px;
+  height: auto;
+}
+
 .site-footer {
   margin-top: 40px;
   background-color: var(--cream-panel);
