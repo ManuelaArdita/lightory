@@ -402,30 +402,12 @@ section, header, footer {
   }
  
   .inventor-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 50px, 50px;
     gap: 32px;
   }
  
   .inventor-photo img {
     max-width: 280px;
-  }
- 
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 16px 0;
-  }
- 
-  .timeline-item.reverse .timeline-text {
-    order: 1;
-  }
- 
-  .timeline-item.reverse .timeline-media {
-    order: 2;
-  }
- 
-  .timeline-text {
-    max-width: 100%;
   }
 }
 
@@ -482,25 +464,12 @@ section, header, footer {
   }
  
   .inventor-section {
-    padding-top: 56px;
-    padding-bottom: 48px;
+    padding-top: 36px;
+    padding-bottom: 28px;
   }
  
   .inventor-photo img {
     max-width: 100%;
-  }
- 
-  .timeline {
-    padding-top: 32px;
-  }
- 
-  .timeline-text h2 {
-    font-size: 1.25rem;
-    flex-wrap: wrap;
-  }
- 
-  .timeline-connector::before {
-    height: 40px;
   }
 
   .show-all-wrap {
