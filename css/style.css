@@ -387,6 +387,46 @@ section, header, footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  .camera-detail {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+ 
+  .camera-media img {
+    max-width: 420px;
+  }
+ 
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .inventor-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+ 
+  .inventor-photo img {
+    max-width: 280px;
+  }
+ 
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px 0;
+  }
+ 
+  .timeline-item.reverse .timeline-text {
+    order: 1;
+  }
+ 
+  .timeline-item.reverse .timeline-media {
+    order: 2;
+  }
+ 
+  .timeline-text {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -422,6 +462,45 @@ section, header, footer {
 
   .featured {
     padding-top: 40px;
+  }
+
+  .camera-detail {
+    padding-top: 40px;
+  }
+ 
+  .camera-info h1 {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+  }
+ 
+  .gallery {
+    padding-top: 48px;
+  }
+ 
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .inventor-section {
+    padding-top: 56px;
+    padding-bottom: 48px;
+  }
+ 
+  .inventor-photo img {
+    max-width: 100%;
+  }
+ 
+  .timeline {
+    padding-top: 32px;
+  }
+ 
+  .timeline-text h2 {
+    font-size: 1.25rem;
+    flex-wrap: wrap;
+  }
+ 
+  .timeline-connector::before {
+    height: 40px;
   }
 
   .show-all-wrap {
